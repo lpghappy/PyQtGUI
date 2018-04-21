@@ -1,0 +1,586 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+                    if (window.location.toString().indexOf("shtml?") > 0) {
+                        self.location = window.location.toString().replace(window.location.search.toString(), "");
+                    }
+                    function doccheckart(json) {
+                        if (json[0].result == "1") {
+                            self.location = "http://www.360doc.com/noarticle.aspx";
+                        }
+                    }
+                </script>
+<script src="/js/jquery1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+                    var patt1 = new RegExp("[0-9]*_[0-9]*");
+                    var url = patt1.exec(location.href);
+                    if (navigator.userAgent.toLowerCase().indexOf("micromessenger") > -1) {
+                        window.location.href = "http://www.360doc26.net/wxarticlenew/" + url.toString().split("_")[1] + ".html";
+                        
+                    }
+                    else if (navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("Android") > 0 || navigator.userAgent.indexOf("iPod") > 0) {  //手机端跳转
+
+                        if (url != "") {
+                            self.location = "http://www.360doc.cn/article/" + url + ".html";
+                        }
+                    }
+                    if ( 717335346 !=  717335346) {
+                        $.ajax({
+                            url: "http://www.360doc.com/ajax/getuserid.ashx",
+                            cache: false,
+                            dataType: "json",
+                            success: function (result) {
+                                if (9824753 != result.userid) {
+                            self.location = "http://www.360doc.com/content/17/1229/10/9824753_717335346.shtml";
+                        }
+                    }
+            });
+        }
+                </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta content="360doc" name="classification" /><link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/9824753_717335346.html"/><meta content="pyqt,pycharm,python" name=keywords><meta content="Python3.6 PyQt5 pycharm 环境搭建" name=description><meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/9824753_717335346.html"/><meta content="一.安装PyQt5，版本：PyQt5-5.9-5.9.1-cp35.cp36.cp37-none-win_amd64.whl.2.有安装了python2和3共存的话选择pip3安装 ：pip3 install PyQt5-5.9-5.9.1-cp35.cp36.cp37-none-win_amd64.whl.二，安装pyqt5_tools，版本：pyqt5_tools-5.8.2.1.0-cp36-none-win_amd64.whl.三在pycharm配置pyqt5.在Qt Designer的设置中，Program选择PyQt安装目录中designer.exe的路径：C:\Python36\Lib\site-packages\pyqt5-tools\designer.exe." name=360docabstract><meta content="www.360doc.com" name="author" /><title>
+Python3.6 PyQt5 pycharm 环境搭建
+</title>
+<script src="/js/showarticlefollow20160329.js?t=2017062101" type="text/javascript" charset="utf-8"></script>
+<script src="http://www.360doc.com/js/jQuery.md5.min.js?t=2016041501" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+                                                var _hmt = _hmt || [];
+                                                (function () {
+                                                    var hm = document.createElement("script");
+                                                    hm.src = "//hm.baidu.com/hm.js?d86954201130d615136257dde062a503";
+                                                    var s = document.getElementsByTagName("script")[0];
+                                                    s.parentNode.insertBefore(hm, s);
+                                                })();
+                                            </script>
+<link rel="stylesheet" type="text/css" href="http://css.360doc.com/wzhead-cleaned.css?t=2016011601" /><link rel="stylesheet" type="text/css" href="http://css.360doc.com/newArticle20160509.css?t=2017101701" />
+<script type="text/javascript" language="javascript">
+                                                        window.onerror = ignoreError;
+                                                        function ignoreError() {
+                                                            return true;
+                                                        }
+                                                    </script>
+<link href="http://css.360doc.com/index7/newheader.css?t=2016123003" rel="stylesheet" type="text/css" /></head>
+<body onmouseup="setDragEnd()" onclick="delAllDiv(event)">
+<span id="LayerLogin"></span>
+<div style="position: fixed; width: 100%; z-index: 1000;">
+<div class="header" style="background-color: #ffffff;">
+<div class="header_1">
+<a href="http://www.360doc.com/index.html">
+<img src="http://pubimage.360doc.com/index7/nlogo.jpg" class="f_left" />
+</a>
+<div class="mylibrary">
+<a id="userInfoUrl" href="http://www.360doc.com/my360doc.aspx" class="a1">
+<div class="h_user">
+<img id="divuserinfonew" src="http://pubimage.360doc.com/index7/dingtu.gif" />
+<span></span>
+</div>
+我的图书馆
+</a>
+<ul class="hm_list hm_account" style="display: none;">
+<li>
+<a href="http://www.360doc.com/myindex.aspx">首页</a>
+</li>
+<li>
+<a href="http://www.360doc.com/myfiles.aspx?app=1&type=3">馆藏</a>
+</li>
+<li>
+<a href="http://www.360doc.com/myreadroom.aspx">阅览室</a>
+</li>
+<li>
+<a href="http://www.360doc.com/mystudy.aspx">学习圈</a>
+</li>
+<li>
+<a href="http://www.360doc.com/mycontacts.aspx">通讯录</a>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="displaylogin();">退出帐号</a>
+</li>
+</ul>
+</div>
+<div class="headmail f_left" style="display: none;">
+<p class="h_icon1" id="newMsg"></p>
+<span class="h_border"></span>
+<ul class="hm_list" id="msgtips">
+<li id="msgicon">
+<a href="/mymsg.aspx?app=2">查看信箱</a>
+</li>
+<li id="sysmsgicon">
+<a href="/mymsg.aspx?app=9">系统消息</a>
+</li>
+<li id="sysicon">
+<a href="/mymsg.aspx?app=4">官方通知</a>
+</li>
+<li class="hm_color2" style="background-color: #f4f4f4">
+<a href="/mymsg.aspx?app=6">设置</a>
+</li>
+</ul>
+</div>
+<div class="headtalker f_left" style="display: none;">
+<p class="h_icon1" id="newDialog"></p>
+<span class="h_border"></span>
+<ul class="hm_list">
+<li id="li1chat">
+<a href="javascript:void(0)" onclick="initchatnew()">开始对话</a>
+</li>
+<li id="li2chat" style="display: none;">
+<a href="javascript:void(0)" style="color: #141414;">有
+<span>11</span>人和你对话，
+<span onclick="initchatnew()" style="color: #4578b4">查看</span>&nbsp;
+<span onclick="clearinfochat()" style="color: #4578b4">忽略</span>
+</a>
+</li>
+<li>
+<a href="http://www.360doc.com/mycontacts.aspx?app=8">历史对话记录</a>
+</li>
+<li class="hm_color2" style="background-color: #f4f4f4">
+<a href="http://www.360doc.com/mycontacts.aspx?app=7">通知设置</a>
+</li>
+</ul>
+</div>
+<a href="http://www.360doc.com/advice.html" target="_blank" class="head_talk f_right">留言交流</a>
+<div class="headsearch f_right">
+<div class="zcomdiv">
+<input type="text" class="headsearch_inp f_left" value="搜文章 找馆友" />
+<span class="headsearch_btn f_right" id="searchlinkid"></span>
+</div>
+<div class="headsearch_select">
+<p class="hs_title">请选择搜索范围</p>
+<a href="javascript:goSearch();" class="cur">含&nbsp;
+<span></span>&nbsp;的文章</a>
+<a href="javascript:goSearch();">昵称为&nbsp;
+<span></span>&nbsp;的馆友</a>
+<a href="javascript:goSearch();">兴趣为&nbsp;
+<span></span>&nbsp;的馆友</a>
+</div>
+</div>
+</div>
+</div>
+<div class="arti_type_shadow"></div>
+</div>
+<div style="height: 68px; _height: 0px; width: 100%;"></div>
+<div class="clear360doc"></div>
+<div class="doc360article_content">
+<div style="height: 90px; padding-top: 13px;">
+<script async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script><ins class='adsbygoogle' style='display: inline-block; width: 970px; height: 90px' data-ad-client='ca-pub-6625678643128649' data-ad-slot='2709112222'></ins><script> (adsbygoogle = window.adsbygoogle || []).push({ }); </script>
+</div>
+<p class="clearboth"></p>
+<div class="a_left">
+<div id="bgchange">
+<div class="fontsize_bgcolor_controler">
+<div class="a_bgcolor">
+<img src="http://pubimage.360doc.com/NewArticle/bgcolor.jpg" />
+<div class="a_colorlist">
+<span class="a_color1" onclick="artStatistics('20-11-1');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" />
+</span>
+<span class="a_color2" onclick="artStatistics('20-11-2');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" />
+</span>
+<span class="a_color3" onclick="artStatistics('20-11-3');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" />
+</span>
+<span class="a_color4" onclick="artStatistics('20-11-4');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" />
+</span>
+<span class="a_color5" onclick="artStatistics('20-11-5');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" />
+</span>
+<span class="a_color6 cur" onclick="artStatistics('20-11-6');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" />
+</span>
+</div>
+</div>
+<div class="a_fontsize">
+<img src="http://pubimage.360doc.com/NewArticle/fontSize.jpg" />
+<div class="fschange">
+<label>
+<input type="radio" name="font_Size" id="" value="18" onclick="artStatistics('20-10-1');" />大
+</label>
+&nbsp;
+<label>
+<input type="radio" name="font_Size" id="" value="16" onclick="artStatistics('20-10-2');" />中
+</label>
+&nbsp;
+<label>
+<input type="radio" name="font_Size" id="" value="14" onclick="artStatistics('20-10-3');" />小
+</label>
+</div>
+</div>
+</div>
+<h2 id="titiletext">
+Python3.6 PyQt5 pycharm 环境搭建
+</h2>
+<div class="article_data">
+<div class="article_data_left">
+2017-12-29
+<span class="a_username">&nbsp;
+<a href="http://www.360doc.com/userhome/9824753" id="savernickname" target="_blank" onclick="artStatistics(&#39;20-7-1&#39;);" title="这是李静图书馆">这是李静...</a>
+</span>
+<span id="articleinfo">
+<span id="docsource" class="a_from"></span>
+<span id="360doc_Readnum"></span>
+<span id="360docResaveCount">
+<span onclick="ShowSaverUser();artStatistics('20-13');" id="360doc_saverNum" style="cursor: pointer;"></span>
+<span id="360doc_saverUser">
+<div style="position: absolute; height: 305px; width: 144px; left: 0px; z-index: 2;" id="sameArtOuter">
+<div onclick="event.cancelBubble=true;" style="overflow-y: auto; height: 300px; overflow-x: hidden; z-index: 100; right: 0px; margin-top: -10px;" id="sameArt">
+</div>
+</div>
+</span>
+</span>
+</span>
+</div>
+<div id="resavelayer1" class="bdsharebuttonbox article_data_right">
+</div>
+</div>
+<div id="articlecontent" class="article_container" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event);">
+<table>
+<tbody>
+<tr>
+<td id="artContent" width="656">
+<div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+<h1 style="box-sizing: border-box; font-size: 34px; margin: 20px 0px 0px; font-family: -apple-system, 'SF UI Display', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; line-height: 1.3; color: rgb(51, 51, 51); word-break: break-word !important;"><br></h1><div data-note-content="" style="box-sizing: border-box; color: rgb(47, 47, 47); line-height: 1.7; font-family: -apple-system, 'SF UI Text', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif; word-break: break-word !important;"><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">一.安装PyQt5，版本：PyQt5-5.9-5.9.1-cp35.cp36.cp37-none-win_amd64.whl</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">1.下载，官方：https://pypi.python.org/pypi/PyQt5或者百度云盘：链接：http://pan.baidu.com/s/1qY4pAiC 密码：4rsf</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">2.有安装了python2和3共存的话选择pip3安装 ：pip3 install PyQt5-5.9-5.9.1-cp35.cp36.cp37-none-win_amd64.whl</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">二，安装pyqt5_tools，版本：pyqt5_tools-5.8.2.1.0-cp36-none-win_amd64.whl</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">1.下载：官方：https://pypi.python.org/pypi/pyqt5-tools或者百度云盘：链接：链接：http://pan.baidu.com/s/1slns9YH 密码：apqt</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">2.安装：pip3 install pyqt5_tools-5.8.2.1.0-cp36-none-win_amd64.whl</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">三在pycharm配置pyqt5</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">1.在pycharm打开设置：</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">添加</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 472px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 472.703px;"></div><div data-width="1038" data-height="701" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 472px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/6148807-c52e1a0c8e59e5cb.png" data-original-width="1038" data-original-height="701" data-original-format="image/png" data-original-filesize="92350" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_1_20171229101247906" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;"><br style="box-sizing: border-box;"></p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">在Qt Designer的设置中，Program选择PyQt安装目录中designer.exe的路径：C:\Python36\Lib\site-packages\pyqt5-tools\designer.exe<br style="box-sizing: border-box;"></p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">Work directory 使用变量$FileDir$（点击后面的 Insert macro 按钮可以不用输入双击上屏 直接插入）</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;"><br style="box-sizing: border-box;"></p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 510px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 495.797px;"></div><div data-width="720" data-height="510" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 495.797px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/6148807-f9d3812804706e4f.png" data-original-width="720" data-original-height="510" data-original-format="image/png" data-original-filesize="64231" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_2_20171229101248234" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">2).设置“PyUIC”-- 这个主要是用来将 Qt界面 转换成 py代码<br style="box-sizing: border-box;"></p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">在PyUIC的设置中，其他的都差不多，Program 写入<a href="https://link.jianshu.com/?t=http://lib.csdn.net/base/python" target="_blank" rel="nofollow" style="box-sizing: border-box; color: rgb(49, 148, 208); text-decoration: none; cursor: pointer; background-color: transparent;">Python</a>的地址，Parameters写入</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">-m PyQt5.uic.pyuic &nbsp;$FileName$ -o $FileNameWithoutExtension$.py</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">把上面的<a href="https://link.jianshu.com/?t=http://lib.csdn.net/base/python" target="_blank" rel="nofollow" style="box-sizing: border-box; color: rgb(49, 148, 208); text-decoration: none; cursor: pointer; background-color: transparent;">python</a>路径修改成自己的即可！</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">Work directory 使用变量$FileDir$</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 505px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 499.297px;"></div><div data-width="708" data-height="505" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 499.297px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/6148807-cb0b1b96165abdc8.png" data-original-width="708" data-original-height="505" data-original-format="image/png" data-original-filesize="61935" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_3_20171229101248359" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">创建第一个pyqt项目：<br style="box-sizing: border-box;"></p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">打开我们的QtDesigner，我们就可以写布局了。</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 658px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 658.688px;"></div><div data-width="882" data-height="830" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 658px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-9a1975d43763551b.jpg" data-original-width="882" data-original-height="830" data-original-format="image/jpeg" data-original-filesize="189984" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_4_20171229101248562" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">启动了Designer程序，我们就可以拖控件了。</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">我们创建窗口程序，选择Man Window，让后点击create。</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 474px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 474.453px;"></div><div data-width="2098" data-height="1422" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 474px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-f268fa95007a3d78.jpg" data-original-width="2098" data-original-height="1422" data-original-format="image/jpeg" data-original-filesize="462751" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_5_20171229101248734" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">点击create后，会出现画布和控件</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 507px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 507.078px;"></div><div data-width="1996" data-height="1446" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 507px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-6ad7f21083de78bd.jpg" data-original-width="1996" data-original-height="1446" data-original-format="image/jpeg" data-original-filesize="490823" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_6_20171229101248859" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">拖动一个文本写点内容：</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 508px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 508.75px;"></div><div data-width="1962" data-height="1426" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 508px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-c428d1ac8c55a9a1.jpg" data-original-width="1962" data-original-height="1426" data-original-format="image/jpeg" data-original-filesize="561095" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_7_20171229101248984" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">保存布局文件。</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 425px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 425.797px;"></div><div data-width="1976" data-height="1202" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 425px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-31d8d906887690a0.jpg" data-original-width="1976" data-original-height="1202" data-original-format="image/jpeg" data-original-filesize="404212" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_8_20171229101249125" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">选择保存路径</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 493px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 493.563px;"></div><div data-width="1424" data-height="1004" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 493px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-6b5e42dedb70b91a.jpg" data-original-width="1424" data-original-height="1004" data-original-format="image/jpeg" data-original-filesize="234753" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_9_20171229101249250" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">此时在项目下可以看到这个文件了。</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 572px; max-height: 176px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 176px;"></div><div data-width="572" data-height="176" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 572px; height: 176px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-dd35ca434d53f0f5.jpg" data-original-width="572" data-original-height="176" data-original-format="image/jpeg" data-original-filesize="39511" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_10_20171229101249406" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">但是这个文件python不能直接运行啊，咋办？</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">此时需要我们上面配置的另一个工具了PyUIC。</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">选中文件右键，选择我们之前配置的PyUIC</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 878px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 878.906px;"></div><div data-width="1072" data-height="1346" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 878px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-6dcac304a31a4564.jpg" data-original-width="1072" data-original-height="1346" data-original-format="image/jpeg" data-original-filesize="235731" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_11_20171229101249484" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">这个命令行工具就会把UI文件转成py文件。</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 586px; max-height: 480px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 479.984px;"></div><div data-width="586" data-height="480" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 586px; height: 479.984px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-ea357d69382e403e.jpg" data-original-width="586" data-original-height="480" data-original-format="image/jpeg" data-original-filesize="70412" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_12_20171229101249687" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">启动这个python文件，我们需要调用它：</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">编写 main.py:</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 442px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 174.781px;"></div><div data-width="1770" data-height="442" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 174.781px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-a03d932a07e5fb93.jpg" data-original-width="1770" data-original-height="442" data-original-format="image/jpeg" data-original-filesize="173784" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_13_20171229101249797" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">代码如下：</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">import sys&nbsp;</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">import HelloWorld</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">from PyQt5.QtWidgets import QApplication, QMainWindow</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">if__name__ =='__main__':&nbsp; &nbsp;&nbsp;</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">app = QApplication(sys.argv)&nbsp; &nbsp;&nbsp;</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">MainWindow = QMainWindow()&nbsp; &nbsp;&nbsp;</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">ui = HelloWorld.Ui_MainWindow()&nbsp; &nbsp;&nbsp;</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">ui.setupUi(MainWindow)&nbsp; &nbsp;</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">&nbsp;MainWindow.show()&nbsp; &nbsp;&nbsp;</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">sys.exit(app.exec_())</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">如何运行:</p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 700px; max-height: 596px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 596.953px;"></div><div data-width="978" data-height="834" style="box-sizing: border-box; position: absolute; top: 0px; left: 0px; width: 700px; height: 596px; overflow: hidden;"><img data-original-src="//upload-images.jianshu.io/upload_images/2880699-d9e1d248e352eb32.jpg" data-original-width="978" data-original-height="834" data-original-format="image/jpeg" data-original-filesize="196217" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_14_20171229101249875" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1;"></div></div></div><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;"><br style="box-sizing: border-box;"></p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">-----------------------------------------------------华丽的分割线--------------------------------------------------------------------<br style="box-sizing: border-box;"></p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;">最近用到了资源文件，资源文件需要用pyrcc5.exe转码，配置方式如图</p><p style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word !important;"><br style="box-sizing: border-box;"></p><div style="box-sizing: border-box; padding-bottom: 25px; width: 700px; margin-left: -40px; text-align: center;"><div style="box-sizing: border-box; z-index: 100; position: relative; transition: background-color 0.1s linear; margin: 0px auto; max-width: 641px; max-height: 505px; background-color: transparent;"><div style="box-sizing: border-box; z-index: 50; padding-bottom: 504.969px;"><img data-original-src="//upload-images.jianshu.io/upload_images/6148807-95e0b908f9aa3680.png" data-original-width="641" data-original-height="505" data-original-format="image/png" data-original-filesize="61207" src="http://image109.360doc.com/DownloadImg/2017/12/2910/120404820_15_20171229101250359" style="line-height: 1.7; box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; cursor: zoom-in; transition: all 0.15s linear; z-index: 100; -webkit-filter: blur(0px); opacity: 1; background-color: transparent;"></div></div></div></div>
+</td>
+<script>
+                                                    var html = document.getElementById("artContent").innerHTML;
+                                                    document.getElementById("artContent").innerHTML = html;
+
+                                                </script>
+</tr>
+</tbody>
+</table>
+<div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none; margin: 0 auto;">
+</div>
+</div>
+<table>
+<tbody>
+<tr>
+<td>
+<ul></ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div></div>
+<span></span>
+<a></a>
+<p style="margin: 0; padding: 0;"></p>
+<p class="clearboth"></p>
+<div id="divreward" style="display: none;"></div>
+<div class="bdsharebuttonbox bottombtn" style="margin-top: 33px;">
+<div class="zcommond" style="overflow: visible;">
+<a href="javascript:void(0);" class="btn_collect" onclick="SaveArt();artStatistics('20-3-2');">转藏到我的图书馆</a>
+<a id="flowimg3" href="javascript:void(0);" class="btn_good" onclick="Showflowerlayer('sendedLayer1');">献花（
+<span id="articleflowernum">0</span>）
+<span id="flowernumadd" style="display: none;">+1</span>
+</a>
+<span class="span1 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);artStatistics('20-8-3');" onmouseover="this.style.color='#0f659c'" onmouseout="this.style.color=''">分享：</span>
+<a class="sharewx f_left" href="javascript:void(0);" onclick="shareWeixin();artStatistics('20-8-6');">微信</a>
+<div class="s2 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);artStatistics('20-8-4');">
+<span></span>
+</div>
+</div>
+<div class="sharelist_new" id="fenxiangLayer2">
+<a class="slbg1" href="javascript:void(0);" data-cmd="qzone" onclick="artStatistics('20-8-8');">QQ空间</a>
+<a class="slbg2" href="javascript:void(0);" data-cmd="sqq" onclick="artStatistics('20-8-10');">QQ好友</a>
+<a class="slbg3" href="javascript:void(0);" data-cmd="tsina" onclick="artStatistics('20-8-12');">新浪微博</a>
+<a class="slbg5" href="javascript:void(0);" onclick="showdivemail1();artStatistics('20-8-16');">推荐给朋友</a>
+</div>
+</div>
+<div class="bottom_controler">
+<p class="bottom_cleft">
+来自：
+<span class="a_username" style="width: auto;">
+<a href="http://www.360doc.com/userhome/9824753" id="savernickname2" target="_blank" onclick="artStatistics(&#39;20-7-2&#39;);">这是李静图书馆</a>
+</span>
+&gt;
+<span id="cname" class="a_from">
+<a href='http://www.360doc.com/userhome.aspx?userid=9824753&cid=65' target='_blank' onclick='artStatistics("20-6");'>《Python学习》</a>
+</span>
+</p>
+<div class="bottom_cright">
+<a href=" https://www.baidu.com/s?wd=pyqt+pycharm+python&tn=SE_hldp01010_6r0gix1f" target="_blank" class="a1" onclick="artStatistics('20-19');">以文找文</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="javascript:void(0);" class="a2" onclick="showAlertLayer1();artStatistics('20-18');">举报</a>
+</div>
+</div>
+<div class="prev_next">
+<p id="lastart" class="p1">
+</p>
+<p id="nextart" class="p2">
+</p>
+</div>
+</div>
+<p class="clearboth"></p>
+<div style="width: 676px; float: left;">
+<div class="str_border" style="border: none; position: relative; z-index: 2;">
+<strong>猜你喜欢</strong>
+</div>
+<ul class="youlike" style="margin-top: -18px; position: relative; z-index: 1;">
+<div style="width: 676px; height: 280px; border: 0;" id="divyoulikead">
+</div>
+</ul>
+<div class="zcommond" style="padding: 10px 0 5px;">
+<div class="bottom_article f_left">
+<div class="str_border">
+<strong>类似文章</strong>
+<a href=http://www.360doc.com/relevant/717335346_more.shtml target='_blank' class='a_more f_right' onclick='artStatistics("20-9-8");'>更多</a>
+</div>
+<ul class="barticle_list">
+<li>
+<span>
+<a href=http://www.360doc.com/content/12/0922/16/214031_237583187.shtml target=_blank onclick='artStatistics("20-9-7");'>Windows下Eric5的安装、运行和实验</a>
+</span>
+</li>
+<li>
+<span>
+<a href=http://www.360doc.com/content/17/1215/13/8728596_713310455.shtml target=_blank onclick='artStatistics("20-9-7");'>Python3 安装 PyQt5</a>
+</span>
+</li>
+<li>
+<span>
+<a href=http://www.360doc.com/content/16/1114/23/28294195_606607451.shtml target=_blank onclick='artStatistics("20-9-7");'>用&#160;PyQt 来编写第一个&amp;nbs...</a>
+</span>
+</li>
+<li>
+<span>
+<a href=http://www.360doc.com/content/14/1017/10/10724725_417613276.shtml target=_blank onclick='artStatistics("20-9-7");'>Python使用Qt的UI文件</a>
+</span>
+</li>
+<li>
+<span>
+<a href=http://www.360doc.com/content/15/0313/16/5283073_454850986.shtml target=_blank onclick='artStatistics("20-9-7");'>解决fdist1.plot(50,cumulative=True)出...</a>
+</span>
+</li>
+<li>
+<span>
+<a href=http://www.360doc.com/content/17/0424/13/37142366_648212993.shtml target=_blank onclick='artStatistics("20-9-7");'>PythonGUI设计2：利用PyQt 设计一个Main...</a>
+</span>
+</li>
+<li>
+<span>
+<a href=http://www.360doc.com/content/14/1024/09/10724725_419406162.shtml target=_blank onclick='artStatistics("20-9-7");'>pyqt中使用matplotlib绘制动态曲线</a>
+</span>
+</li>
+<li>
+<span>
+<a href=http://www.360doc.com/content/13/1024/19/14285739_323840541.shtml target=_blank onclick='artStatistics("20-9-7");'>pycharm 教程（一）安装和首次使用</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="bottom_article f_right">
+<div class="str_border">
+<strong>精选文章</strong>
+</div>
+<ul class="barticle_list">
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0522/21/3256622_287256751.shtml target="_blank">各种维生素对人体的作用</a>
+</span>
+</li>
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0820/19/7392892_308474735.shtml target="_blank">难倒十二亿人的八大成语</a>
+</span>
+</li>
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0921/19/4299739_315953426.shtml target="_blank">给单元格着上颜色</a>
+</span>
+</li>
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0415/17/6948999_278340847.shtml target="_blank">身上奇痒患湿疹，神水一摸就除根</a>
+</span>
+</li>
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0728/00/1542087_302843708.shtml target="_blank">高中数学全套教程详情</a>
+</span>
+</li>
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0621/16/3966739_294439694.shtml target="_blank">幼儿园105个游戏大全——好不容易找到的哦</a>
+</span>
+</li>
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0919/10/4917028_315508005.shtml target="_blank">2013年的一句话经典语录，说的真好！</a>
+</span>
+</li>
+<li>
+<span>
+<a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/14/0103/01/535749_342106174.shtml target="_blank">如果司机有了梦想</a>
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div id="divunderad">
+</div>
+<div id="ReflectionPart">
+<div style="height: 156px; margin: 0px 0px;">
+<div class="plbox">
+<div style="padding-left: 6px;">
+<div class="titwx" style="height: 23px; font-size: 16px; font-weight: bold; margin-top: 10px;">
+发表评论
+<a target="_blank" href="http://www.360doc.com/agreement.html" style="float: right; font-size: 12px; color: #666; font-weight: normal; line-height: 20px; padding-right: 4px;">评论公约</a>
+</div>
+<textarea name="SendRefTB" id="SendRefTB" style="width: 100%; margin-top: 6px; height: 75px; border: 1px solid #e7e7e7; background-color: #fff; overflow: auto; font-size: 12px;" onfocus="testContent(1);" onblur="testContent(2)"></textarea>
+<div style="text-align: right; padding-right: 3px; padding-top: 6px;">
+<div class="huifubt">
+<a id="ImgSendPL" href="javascript:void(0);" onclick="SubmitReflection();"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="padding-top: 15px; padding-left: 15px;" id="Reflction">
+</div>
+</div>
+</div>
+<div class="a_right">
+<div class="user_info">
+<div class="user_photo f_left">
+<p class="user_photopic">
+<a href="http://www.360doc.com/userhome/9824753" id="userphotourl" target="_blank" onclick="artStatistics(&#39;20-7-4&#39;);">
+<img src="http://userimage8.360doc.com/17/1010/09/9824753_201710100907380099_main.jpg" id="userphoto" width="58" height="58" />
+</a>
+</p>
+<a href="javascript:void(0);" onclick="docTalk();artStatistics('20-15');" class="user_talk" title="与TA对话"></a>
+</div>
+<div class="user_data f_right">
+<div class="user_data_name">
+<a href="http://www.360doc.com/userhome/9824753" id="nickname" target="_blank" onclick="artStatistics(&#39;20-7-3&#39;);">这是李静图书馆</a>
+<img src="http://pubimage.360doc.com/NewArticle/user_name_tag.gif" alt="图书馆" />
+</div>
+<p id="userdegree"><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar2.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar3.gif' /></p>
+<div class="user_data_num">
+<a id="spanfollowstatus" class="gz_no"></a>
+<script type="text/javascript">isfollow(9824753);</script>
+<span id="follownum">33</span>&nbsp;&nbsp;&nbsp;&nbsp;
+<span>馆藏</span>&nbsp;
+<span id="artnum">2687</span>
+</div>
+</div>
+</div>
+<div class="his_her"><ul class='his_her_type'><li class='f_left curone'>TA的最新馆藏</li></ul><div class='his_her_div' style="height:220px;"><ul class='his_her_list'><li><div><span style="color:#b0b0b0;">[转]&nbsp;</span><a href=http://www.360doc.com/content/18/0324/20/41605636_739893840.shtml target=_blank onclick="artStatistics('20-9-2');">与小人相处的五个诀窍，学会了才不吃亏！</a></div><div><span style="color:#b0b0b0;">[转]&nbsp;</span><a href=http://www.360doc.com/content/18/0320/03/51943590_738592010.shtml target=_blank onclick="artStatistics('20-9-2');">“为人处世兵法篇”，36计道尽做人大智慧！</a></div><div><span></span><a href=http://www.360doc.com/content/18/0419/16/9824753_747042821.shtml target=_blank onclick="artStatistics('20-9-2');">时间之弦</a></div><div><span></span><a href=http://www.360doc.com/content/18/0419/16/9824753_747042182.shtml target=_blank onclick="artStatistics('20-9-2');">时间巨匠|克里斯蒂安&#183;惠更斯</a></div><div><span></span><a href=http://www.360doc.com/content/18/0419/02/9824753_746789499.shtml target=_blank onclick="artStatistics('20-9-2');">在bochs虚拟机中安装WindowsXP (学习)</a></div><div><span></span><a href=http://www.360doc.com/content/18/0419/01/9824753_746787464.shtml target=_blank onclick="artStatistics('20-9-2');">Bochs 在Windows和Linux下配置对比</a></div><div><span></span><a href=http://www.360doc.com/content/18/0418/23/9824753_746767808.shtml target=_blank onclick="artStatistics('20-9-2');">bochs在windows下的使用</a></div></li></ul></div></div>
+<div class="clear360doc" style="padding-top: 10px; height: 260px;">
+<div id="divifartad1">
+<script>
+            var strow = document.body.offsetWidth;
+            var strsw = document.body.scrollWidth;
+            var strsc = window.screen.width;
+
+            function aliad1() {
+                document.write('<a style="display:none!important" id="tanx-a-mm_11220363_1101997_10218757"></a>');
+                tanx_s = document.createElement("script");
+                tanx_s.type = "text/javascript";
+                tanx_s.charset = "gbk";
+                tanx_s.id = "tanx-s-mm_11220363_1101997_10218757";
+                tanx_s.async = true;
+                tanx_s.src = "http://p.tanx.com/ex?i=mm_11220363_1101997_10218757";
+                tanx_h = document.getElementsByTagName("head")[0];
+                if (tanx_h) tanx_h.insertBefore(tanx_s, tanx_h.firstChild);
+            }
+
+            function aliad2() {
+                document.write('<a style="display:none!important" id="tanx-a-mm_11220363_1101997_26568831"></a>');
+                tanx_s = document.createElement("script");
+                tanx_s.type = "text/javascript";
+                tanx_s.charset = "gbk";
+                tanx_s.id = "tanx-s-mm_11220363_1101997_26568831";
+                tanx_s.async = true;
+                tanx_s.src = "http://p.tanx.com/ex?i=mm_11220363_1101997_26568831";
+                tanx_h = document.getElementsByTagName("head")[0];
+                if (tanx_h) tanx_h.insertBefore(tanx_s, tanx_h.firstChild);
+            }
+
+
+            if (strsc <= 1024) {
+                aliad1();
+            }
+            else {
+                //300宽
+                aliad2();
+            }
+        </script>
+</div>
+<div style="height: 10px;">
+</div>
+</div>
+<div class="his_her" id="recommendArt" style="margin-top: 5px;">
+<div class="str_border" style="margin: 0;">
+<span style="font-size: 14px; float: left;">喜欢该文的人也喜欢</span>
+<a style="float: right;" class="a_more" onclick="artStatistics('20-9-4');" href="http://www.360doc.com/readroom.html" target="_blank">更多</a>
+</div>
+<div class='his_her_div' style="height: 264px;">
+<ul class='his_her_list'>
+<li id="recommendArtLists"></li>
+</ul>
+</div>
+</div>
+<div class="clear360doc" style="padding-top: 10px;" id="divifartad2">
+</div>
+<br />
+<div id="divifartrightsogou">
+</div>
+<div class="clear360doc" id="divad5" style="padding-top: 11px; zoom: 1; width: 300px;">
+<div id="divad4" style="display: none;">
+<div id="divifartad">
+</div>
+<div class="ggwz">
+<a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+</div>
+<div style="height: 13px;">
+</div>
+</div>
+<div style="clear: both; display: none;" id="divad6">
+<div id="adfloatbaidu">
+</div>
+<div class="ggwz" style="left: 25px;">
+<a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+</div>
+<div style="height: 13px;">
+</div>
+</div>
+<div style="height: 75px;">
+</div>
+</div>
+</div>
+</div>
+<p class="clearboth"></p>
+<input type="hidden" id="artid" value="717335346" />
+<input type="hidden" id="docarttitle" value="Python3.6+PyQt5+pycharm+%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba" />
+<input type="hidden" id="firstartid" value="717335346" />
+<input type="hidden" id="firstuid" value="9824753" />
+<input type="hidden" id="firstarturl" value="http://www.360doc.com/content/17/1229/10/9824753_717335346.shtml" />
+<input type="hidden" id="subclassid" value="-1" />
+<input type="hidden" id="recommendart1" value="-1" />
+<input type="hidden" id="recommendart2" value="-1" />
+<input type="hidden" id="isowner" value="False" />
+<input type="hidden" id="original" value="0" />
+<input type="hidden" id="showrewardlist" value="0" />
+<input type="hidden" id="saveruserid" value="9824753" />
+<input type="hidden" id="sourceurl" value="http://www.360doc.com/userhome/9824753" />
+<input type="hidden" id="artreadroomid" value="0" />
+<script src="http://www.360doc.com/js/Statistics/sha1.js?t=2017092101" type="text/javascript"></script>
+<script src="http://www.360doc.com/js/Statistics/addStatistics.js?t=2017101601" type="text/javascript"></script>
+<script src="http://www.360doc.com/js/showarticle.js?t=2018041701" type="text/javascript" charset="utf-8"></script>
+<script>GerLookingUserInfo(1,9824753,1,1,'-1',-1,10,0);OutputSource('http://www.360doc.com/userhome/9824753','');OutputLastNextArt('python3.6.1+%e5%ae%89%e8%a3%85PyQt5%ef%bc%8c%e4%bb%a5%e5%8f%8a%e9%85%8d%e7%bd%aeQTDesigner%ef%bc%8cPyUIC','http://www.360doc.com/content/17/1229/10/9824753_717334841.shtml',0);OutputLastNextArt('Python%e5%8d%b8%e8%bd%bd%e6%a8%a1%e5%9d%97%e7%9a%84%e6%96%b9%e6%b3%95%e6%b1%87%e6%80%bb','http://www.360doc.com/content/17/1229/10/9824753_717338234.shtml',1);</script>
+<script type="text/javascript" src="http://www.360doc.com/js/index7/newheader.js?t=2018040902"></script>
+<script src="http://blockart.360doc.com/ajax/getstatusv2.ashx?aid=717335346" type="text/javascript" charset="utf-8" async="async"></script>
+<script type="text/javascript">
+                                var baiduImagePlus = {
+                                    noLogo: true,
+                                    unionId: 'u2617463',
+                                    maxMiniAdCount: 0,
+                                    formList: [{ formId: 10 }]
+                                };
+                            </script>
+<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/i.js"></script>
+</body>
+</html>
