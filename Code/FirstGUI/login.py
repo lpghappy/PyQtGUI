@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(274, 250)
+        MainWindow.resize(280, 312)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("image/windowIcon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -39,9 +39,29 @@ class Ui_MainWindow(object):
         self.pushButton_2.setGeometry(QtCore.QRect(160, 192, 75, 31))
         self.pushButton_2.setObjectName("pushButton_2")
         MainWindow.setCentralWidget(self.centralwidget)
+        self.toolBar = QtWidgets.QToolBar(MainWindow)
+        self.toolBar.setObjectName("toolBar")
+        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+        self.menuBar = QtWidgets.QMenuBar(MainWindow)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 280, 23))
+        self.menuBar.setObjectName("menuBar")
+        self.menu = QtWidgets.QMenu(self.menuBar)
+        self.menu.setObjectName("menu")
+        MainWindow.setMenuBar(self.menuBar)
+        self.statusBar = QtWidgets.QStatusBar(MainWindow)
+        self.statusBar.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.statusBar.setObjectName("statusBar")
+        MainWindow.setStatusBar(self.statusBar)
+        self.toolBar.addSeparator()
+        self.menuBar.addAction(self.menu.menuAction())
 
         self.retranslateUi(MainWindow)
+        self.pushButton_2.clicked.connect(MainWindow.close)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        MainWindow.setTabOrder(self.textEdit, self.textEdit_2)
+        MainWindow.setTabOrder(self.textEdit_2, self.checkBox)
+        MainWindow.setTabOrder(self.checkBox, self.pushButton)
+        MainWindow.setTabOrder(self.pushButton, self.pushButton_2)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -51,15 +71,7 @@ class Ui_MainWindow(object):
         self.checkBox.setText(_translate("MainWindow", "记住用户名和密码"))
         self.pushButton.setText(_translate("MainWindow", "取消"))
         self.pushButton_2.setText(_translate("MainWindow", "确定"))
-
-if __name__=="__main__":
-    import sys
-    from PyQt5.QtWidgets import QApplication, QMainWindow
-
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+        self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
+        self.menu.setTitle(_translate("MainWindow", "文件"))
+        self.statusBar.setToolTip(_translate("MainWindow", "<html><head/><body><p>哈哈</p></body></html>"))
 

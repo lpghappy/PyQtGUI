@@ -9,6 +9,7 @@
           <option value="Hello" />
           <option value="login" />
           <option value="FirstGUI.main.QtWidgets" />
+          <option value="FirstGUI.main.Ui_MainWindow" />
         </list>
       </option>
     </inspection_tool>
