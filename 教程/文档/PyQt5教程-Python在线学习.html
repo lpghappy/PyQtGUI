@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>PyQt5教程-Python在线学习</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='crayon-css'  href='http://code.py40.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css'  href='http://code.py40.com/wp-content/themes/xiu_5.3/style.css?ver=5.3' type='text/css' media='all' />
+<script type='text/javascript' src='http://code.py40.com/wp-content/themes/xiu_5.3/js/jquery.js?ver=5.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/code.py40.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://code.py40.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta'></script>
+<link rel='https://api.w.org/' href='http://code.py40.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://code.py40.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://code.py40.com/wp-includes/wlwmanifest.xml" /> 
+<link rel="canonical" href="http://code.py40.com/face" />
+<link rel='shortlink' href='http://code.py40.com/?p=2119' />
+<link rel="alternate" type="application/json+oembed" href="http://code.py40.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcode.py40.com%2Fface" />
+<link rel="alternate" type="text/xml+oembed" href="http://code.py40.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcode.py40.com%2Fface&#038;format=xml" />
+<meta name="keywords" content="PyQt5教程">
+<meta name="description" content="PyQt5用来编写Python脚本的应用界面。本章就详细介绍PyQt5教程，并通过丰富的实战提高文章的可读性。在教程后面会附带PyQt5常见问题。  PyQt5">
+<link rel="shortcut icon" href="http://code.py40.com/favicon.ico">
+<!--[if lt IE 9]><script src="http://code.py40.com/wp-content/themes/xiu_5.3/js/html5.js"></script><![endif]-->
+</head>
+<body class="page-template-default page page-id-2119 uimo ui-c3">
+<section class="container">
+<header class="header">
+	<div class="logo"><a href="http://code.py40.com" title="Python在线学习--Python教程|脚本资源分享"><img src="http://code.py40.com/wp-content/uploads/2017/04/logo_xiu-2-2.png" alt="Python在线学习">Python在线学习</a></div>	<ul class="nav"><li class="navmore"></li><li id="menu-item-237" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-237"><a href="http://code.py40.com/category/asc3"><span class="glyphicon glyphicon-glass"></span>Python爬虫</a></li>
+<li id="menu-item-1176" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1176"><a href="http://code.py40.com/category/asc4"><span class="glyphicon glyphicon-phone"></span>Python脚本</a></li>
+<li id="menu-item-1565" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1565"><a href="http://code.py40.com/category/python%e4%b8%93%e5%8c%ba/%e6%8a%80%e6%9c%af%e5%88%86%e4%ba%ab"><span class="glyphicon glyphicon-list"></span>Python知识</a></li>
+<li id="menu-item-3112" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3112"><a href="http://code.py40.com/category/android"><span class="glyphicon glyphicon-bookmark"></span>Android</a></li>
+<li id="menu-item-2697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2697"><a href="http://code.py40.com/category/%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f"><span class="glyphicon glyphicon-send"></span>微信小程序</a></li>
+<li id="menu-item-1897" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1897"><a href="http://code.py40.com/category/%e8%b5%84%e6%ba%90%e4%b8%8b%e8%bd%bd"><span class="glyphicon glyphicon-leaf"></span>资源下载</a></li>
+<li id="menu-item-2758" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2758"><a href="http://code.py40.com/category/%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f"><span class="glyphicon glyphicon-fire"></span>操作系统</a></li>
+</ul>	<form method="get" class="search-form" action="http://code.py40.com/" ><input class="form-control" name="s" type="text" placeholder="输入关键字" value=""><input class="btn" type="submit" value="搜索"></form>		<div class="feeds">
+					<a class="feed feed-rss" rel="external nofollow" href="http://code.py40.com/feed" target="_blank"><i></i>RSS订阅</a>
+			</div>
+	<div class="slinks">
+		<a href="http://code.py40.com/changelinkes">交换友链</a>|<a href="http://code.py40.com/126.html">关于我们</a><br><a href="http://sport.py40.com" target="_blank">猫友运动</a>|<a  
+target="_blank" href="http://mm.py40.com">猫友图库</a>	</div>
+
+	</header>
+<div class="content-wrap">
+	<div class="content">
+				<h1 class="title"><strong><a href="http://code.py40.com/face">PyQt5教程</a></strong></h1>
+		<article class="article-content">
+			
+<div id='article-index'><strong>文章目录</strong><text id='text_yincang'> [ 隐藏 ] </text>
+		                     <ul id='index-ul' style='display:block'>
+<li><a href="#title-0" >PyQt5教程</a></li><li><a href="#title-1" >用QtDesigner设计界面</a></li><li><a href="#title-2" >PyQt5实战</a></li><li><a href="#title-3" >PyQt5常见问题</a></li></ul>
+				                  </div>
+<p>PyQt5用来编写Python脚本的应用界面。本章就详细介绍PyQt5教程，并通过丰富的实战提高文章的可读性。在教程后面会附带PyQt5常见问题。</p>
+<h2 id="title-0">PyQt5教程</h2>
+<div class="cols-2">
+<a href="http://code.py40.com/1948.html">【第一节】PyQt5 简介</a><br />
+<a href="http://code.py40.com/1961.html">【第二节】PyQt5 基本功能</a><br />
+<a href="http://code.py40.com/1995.html">【第三节】PyQt5 布局管理</a><br />
+<a href="http://code.py40.com/1984.html">【第四节】PyQt5 菜单和工具栏</a><br />
+<a href="http://code.py40.com/2049.html">【第五节】PyQt5 事件和信号</a><br />
+<a href="http://code.py40.com/2004.html">【第六节】PyQt5 对话框</a><br />
+<a href="http://code.py40.com/2018.html">【第七节】PyQt5 控件</a><br />
+<a href="http://code.py40.com/2026.html">【第八节】PyQt5 控件(II)</a><br />
+<a href="http://code.py40.com/2035.html">【第九节】PyQt5 拖拽</a><br />
+<a href="http://code.py40.com/2042.html">【第十节】PyQt5 绘图</a><br />
+<a href="http://code.py40.com/2049.html">【第十一节】PyQt5 自定义控件</a><br />
+<a href="http://code.py40.com/2052.html">【第十二节】PyQt5 俄罗斯方块</a>
+</div>
+<h2 id="title-1">用QtDesigner设计界面</h2>
+<div class="cols-2">
+<a href="http://code.py40.com/2540.html">【第一节】QtDesigner安装</a><br />
+<a href="http://code.py40.com/2561.html">【第二节】用QtDesigner设计第一个界面</a>
+</div>
+<h2 id="title-2">PyQt5实战</h2>
+<div class="cols-2">
+</div>
+<h2 id="title-3">PyQt5常见问题</h2>
+<div class="cols-2">
+<a href="http://code.py40.com/2177.html">PyQt5 界面显示无响应</a><br />
+<a href="http://code.py40.com/2182.html">PyQt5 打开外部链接</a><br />
+<a href="http://code.py40.com/2203.html">PyQt5 选择文件和文件</a><br />
+<a href="http://code.py40.com/2439.html">PyQt5 安装</a>
+</div>
+		</article>
+					</div>
+</div>
+<aside class="sidebar">	
+<div class="widget widget_ads"><div class="widget_ads_inner"><script type="text/javascript">
+        document.write('<a style="display:none!important" id="tanx-a-mm_118338998_26780813_105150402"></a>');
+        tanx_s = document.createElement("script");
+        tanx_s.type = "text/javascript";
+        tanx_s.charset = "gbk";
+        tanx_s.id = "tanx-s-mm_118338998_26780813_105150402";
+        tanx_s.async = true;
+        tanx_s.src = "http://p.tanx.com/ex?i=mm_118338998_26780813_105150402";
+        tanx_h = document.getElementsByTagName("head")[0];
+        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script></div></div><div class="widget widget_text"><h3 class="title"><strong>在线手册中心</strong></h3>			<div class="textwidget"><ul>
+<li style="padding:0px 0px 10px 0px;">
+<a target="_blank"  href="http://code.py40.com/python3"><span class="glyphicon glyphicon-share"></span> Python3中文教程</a>
+</li>
+<li style="padding:0px 0px 10px 0px;">
+<a target="_blank" href="http://code.py40.com/pyqt5"><span class="glyphicon glyphicon-share"></span> PyQt5中文教程</a>
+</li>
+<li style="padding:0px 0px 10px 0px;">
+<a target="_blank" href="http://code.py40.com/algorithm"><span class="glyphicon glyphicon-share"></span> Python算法</a>
+</li><li style="padding:0px 0px 10px 0px;">
+<a target="_blank" href="http://code.py40.com/pythongame"><span class="glyphicon glyphicon-share"></span> Python游戏开发</a>
+</li>
+<li style="padding:0px 0px 10px 0px;">
+<a target="_blank" href="http://code.py40.com/pythonmodule"><span class="glyphicon glyphicon-share"></span> Python模块学习</a>
+</li>
+</ul></div>
+		</div><div class="widget widget_ads"><div class="widget_ads_inner"><script type="text/javascript">
+var sogou_ad_id=823564;
+var sogou_ad_height=200;
+var sogou_ad_width=500;
+</script>
+<script type='text/javascript' src='http://images.sohu.com/cs/jsfile/js/c.js'></script>
+</div></div><div class="widget widget_tags"><h3 class="title"><strong>热门标签</strong></h3><ul class="widget_tags_inner"><li><a title="13个话题" href="http://code.py40.com/tag/android%e5%9f%ba%e7%a1%80">Android基础</a></li><li><a title="5个话题" href="http://code.py40.com/tag/python3%e6%95%99%e7%a8%8b">python3教程</a></li><li><a title="5个话题" href="http://code.py40.com/tag/python3%e7%88%ac%e8%99%ab">python3爬虫</a></li><li><a title="5个话题" href="http://code.py40.com/tag/python%e8%b5%84%e6%ba%90">Python资源</a></li><li><a title="5个话题" href="http://code.py40.com/tag/android%e7%bc%96%e8%af%91%e5%b7%a5%e5%85%b7">Android编译工具</a></li><li><a title="4个话题" href="http://code.py40.com/tag/python3%e5%bc%82%e5%b8%b8">python3异常</a></li><li><a title="4个话题" href="http://code.py40.com/tag/python3%e5%ba%93">python3库</a></li><li><a title="4个话题" href="http://code.py40.com/tag/python%e6%a8%a1%e5%9d%97">python模块</a></li><li><a title="4个话题" href="http://code.py40.com/tag/python%e6%b8%b8%e6%88%8f%e5%bc%80%e5%8f%91">Python游戏开发</a></li><li><a title="4个话题" href="http://code.py40.com/tag/%e5%b7%a5%e5%85%b7">工具</a></li><li><a title="3个话题" href="http://code.py40.com/tag/%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2">个人博客</a></li><li><a title="3个话题" href="http://code.py40.com/tag/%e8%87%aa%e5%8a%a8%e5%8c%96%e8%84%9a%e6%9c%ac">自动化脚本</a></li><li><a title="3个话题" href="http://code.py40.com/tag/linux">Linux</a></li><li><a title="3个话题" href="http://code.py40.com/tag/android%e8%87%aa%e5%ae%9a%e4%b9%89view">Android自定义View</a></li><li><a title="2个话题" href="http://code.py40.com/tag/%e8%84%9a%e6%9c%ac%e5%85%a5%e9%97%a8">脚本入门</a></li><li><a title="2个话题" href="http://code.py40.com/tag/mac%e6%8a%80%e5%b7%a7">mac技巧</a></li><li><a title="2个话题" href="http://code.py40.com/tag/%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f">微信小程序</a></li><li><a title="2个话题" href="http://code.py40.com/tag/andoid%e5%b0%8f%e6%8a%80%e5%b7%a7">Andoid小技巧</a></li><li><a title="1个话题" href="http://code.py40.com/tag/python3%e5%ae%9e%e4%be%8b">python3实例</a></li><li><a title="1个话题" href="http://code.py40.com/tag/%e6%b8%b8%e6%88%8f">游戏</a></li><li><a title="1个话题" href="http://code.py40.com/tag/pyqt5">PyQt5</a></li><li><a title="1个话题" href="http://code.py40.com/tag/centos">Centos</a></li><li><a title="1个话题" href="http://code.py40.com/tag/%e7%88%ac%e8%99%ab%e5%85%a5%e9%97%a8">爬虫入门</a></li><li><a title="1个话题" href="http://code.py40.com/tag/python">python</a></li></ul></div><div class="widget widget_postlist"><h3 class="title"><strong>随机推荐</strong></h3><ul class="items-01">		<li><a href="http://code.py40.com/1804.html"><span class="thumbnail"><span><img data-original="http://code.py40.com/wp-content/uploads/2016/10/446083350-220x150.jpg" class="thumb"/></span></span><span class="text">Python列出文件夹下所有文件</span><span class="text-muted post-views">阅读(411)</span></a></li>
+				<li><a href="http://code.py40.com/1624.html"><span class="thumbnail"><span><img data-original="http://code.py40.com/wp-content/uploads/2016/10/120541400-220x150.jpg" class="thumb"/></span></span><span class="text">python-希尔排序</span><span class="text-muted post-views">阅读(289)</span></a></li>
+				<li><a href="http://code.py40.com/3031.html"><span class="thumbnail"><img data-original="http://code.py40.com/wp-content/uploads/2017/06/QQ20170607171147-150x150.png" class="thumb"/></span><span class="text">Python游戏开发教程五：大喵爱吃鱼小游戏开发实例</span><span class="text-muted post-views">阅读(372)</span></a></li>
+				<li><a href="http://code.py40.com/3272.html"><span class="thumbnail"><span><img data-original="http://code.py40.com/wp-content/themes/xiu_5.3/images/thumbnail.png" class="thumb"/></span></span><span class="text">RxJava2.0系列教程入门</span><span class="text-muted post-views">阅读(192)</span></a></li>
+				<li><a href="http://code.py40.com/3016.html"><span class="thumbnail"><img data-original="http://code.py40.com/wp-content/uploads/2017/06/QQ20170607141840-150x150.png" class="thumb"/></span><span class="text">Python游戏开发教程三：Pygame事件与设备轮询</span><span class="text-muted post-views">阅读(404)</span></a></li>
+				<li><a href="http://code.py40.com/850.html"><span class="thumbnail"><span><img data-original="http://code.py40.com/wp-content/themes/xiu_5.3/images/thumbnail.png" class="thumb"/></span></span><span class="text">python 从数字中找出最大和最小</span><span class="text-muted post-views">阅读(2844)</span></a></li>
+				<li><a href="http://code.py40.com/38.html"><span class="thumbnail"><span><img data-original="http://code.py40.com/wp-content/uploads/2016/09/12.jpg" class="thumb"/></span></span><span class="text">【第一节】python转exe文件</span><span class="text-muted post-views">阅读(699)</span></a></li>
+		</ul></div></aside><footer class="footer">
+			<div class="flinks">
+			<strong>合作伙伴</strong>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.monkeyblog.cn/" target="_blank">monkey前端博客</a></li>
+<li><a href="http://WordpressLeaf.com" target="_blank">WordpressLeaf</a></li>
+<li><a href="http://8e8z.com/" target="_blank">绿叶之秋</a></li>
+<li><a href="http://sport.py40.com" target="_blank">跑趣吧</a></li>
+<li><a href="http://www.sxlog.com/" target="_blank">随心网</a></li>
+<li><a href="http://tianziheng.top/" target="_blank">田梓衡的博客</a></li>
+<li><a href="http://www.xyzbeta.com/" target="_blank">维简网</a></li>
+<li><a href="http://www.xueshanlinghu.com/" target="_blank">雪山凌狐教程</a></li>
+<li><a href="https://www.1314mylove.com/" target="_blank">壹叁壹肆</a></li>
+<li><a href="http://www.yxpk.net/" target="_blank">影戏拍客</a></li>
+
+	</ul>
+
+		</div>
+	    &copy; 2018 <a href="http://code.py40.com">Python在线学习</a> &nbsp; 本站主题由 <a href="http://py40.com" target="_blank">py40.com </a> 提供 &nbsp; 
+    <div style="display:none">
+<script language="javascript" type="text/javascript" src="//js.users.51.la/19217049.js"></script>
+
+</div>
+
+	<div class="top25">
+		Python在线学习<span id="span_dt_dt"></span>
+	</div>
+
+	<script>
+	    function show_date_time() {
+	        window.setTimeout("show_date_time()", 1000);
+	        BirthDay = new Date("9/1/2016 00:00:01");
+	        today = new Date();
+	        timeold = (today.getTime() - BirthDay.getTime());
+	        sectimeold = timeold / 1000
+	        secondsold = Math.floor(sectimeold);
+	        msPerDay = 24 * 60 * 60 * 1000
+	        e_daysold = timeold / msPerDay
+	        daysold = Math.floor(e_daysold);
+	        e_hrsold = (e_daysold - daysold) * 24;
+	        hrsold = Math.floor(e_hrsold);
+	        e_minsold = (e_hrsold - hrsold) * 60;
+	        minsold = Math.floor((e_hrsold - hrsold) * 60);
+	        seconds = Math.floor((e_minsold - minsold) * 60);
+	        span_dt_dt.innerHTML = "已运行： " + daysold + "天 " + hrsold + "小时 " + minsold + "分 " + seconds + "秒 " +" 未来的日子我陪你一起走过";
+	    }
+	    show_date_time();
+	</script>
+
+</footer>
+</section>
+
+<script>
+window.jui = {
+	uri: 'http://code.py40.com/wp-content/themes/xiu_5.3',
+	roll: '',
+	ajaxpager: '0'
+}
+</script>
+<script type='text/javascript' src='http://code.py40.com/wp-content/themes/xiu_5.3/js/bootstrap.js?ver=5.3'></script>
+<script type='text/javascript' src='http://code.py40.com/wp-content/themes/xiu_5.3/js/custom.js?ver=5.3'></script>
+<script type='text/javascript' src='http://code.py40.com/wp-includes/js/wp-embed.min.js?ver=4.7.10'></script>
+</body>
+</html>

@@ -7,6 +7,8 @@
           <option value="PyQt5.QtCore" />
           <option value="PyQt5.QtGui" />
           <option value="Hello" />
+          <option value="login" />
+          <option value="FirstGUI.main.QtWidgets" />
         </list>
       </option>
     </inspection_tool>
